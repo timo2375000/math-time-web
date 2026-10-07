@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PLATFORM MATH · 선생님 레슨플랜</title><style>﻿:root{--ink:#20253b;--muted:#85899b;--purple:#7162d9;--border:#ececf3;--bg:#f7f8fc;--green:#238a6b}*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI","Malgun Gothic",sans-serif;color:var(--ink);background:var(--bg);font-size:14px}button,input,select,textarea{font:inherit}button,a,select{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #b5a8f5;outline-offset:3px}.sidebar{width:246px;position:fixed;inset:0 auto 0 0;background:white;border-right:1px solid var(--border);padding:34px 22px;display:flex;flex-direction:column}.brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink);font-size:24px;font-weight:750;letter-spacing:-1px}.brand small{display:block;font-size:10px;letter-spacing:1px;color:var(--muted);font-weight:500;margin-top:4px}.nav-label{font-size:10px;letter-spacing:1.8px;color:#a0a3b3;margin:48px 12px 13px;font-weight:700}.nav{border:0;width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:14px 15px;background:none;border-radius:9px;color:#6d7083}.nav.active{background:#f0edff;color:#6a59cb;font-weight:650}.nav>span:first-child{font-size:21px}.nav-dot{margin-left:auto;background:var(--purple);width:6px;height:6px;border-radius:50%}.roster-label{margin-top:32px;display:flex;justify-content:space-between}.roster-label span{font-size:10px;letter-spacing:0;font-weight:400}.teacher-nav-button{border:0;background:transparent;width:100%;display:flex;align-items:center;gap:11px;padding:11px 12px;color:#626679;border-radius:9px;text-align:left}.teacher-nav-button.selected{background:#f5f3ff;color:var(--purple)}.avatar{width:32px;height:32px;display:grid;place-items:center;background:#ece8fb;color:var(--purple);border-radius:11px;font-size:12px;font-weight:700;flex-shrink:0}.teacher-nav-button small{margin-left:auto;color:#a1a4b3;font-size:11px}.sidebar-bottom{margin-top:auto;border-top:1px solid var(--border);padding-top:22px;display:flex;gap:10px;font-size:11px;font-weight:600}.sidebar-bottom small{display:block;color:var(--muted);font-weight:400;margin-top:5px}.workspace{margin-left:246px}.topbar{height:76px;background:#ffffffb3;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 44px;font-size:12px;color:var(--muted)}.topbar strong{font-weight:500;color:#555b70}.slash{margin:0 14px;color:#c8cad5}.demo-pill{border:1px solid var(--border);border-radius:20px;padding:7px 12px;background:white;font-size:11px;display:flex;gap:7px;align-items:center}.demo-pill i{width:5px;height:5px;background:#a598dc;border-radius:50%}main{max-width:1500px;margin:0 auto;padding:43px 44px 20px}.page-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.eyebrow{color:var(--purple);font-size:10px;letter-spacing:2px;font-weight:700}h1{font-size:29px;letter-spacing:-1.1px;font-weight:650;margin:10px 0 12px}.page-heading p{color:var(--muted);margin:0;font-size:12px}.button{border:1px solid transparent;border-radius:8px;padding:11px 17px;font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.primary{background:var(--purple);color:white;box-shadow:0 4px 10px #7162d919}.primary:hover{background:#6252c6}.secondary{background:white;border-color:#e3e3ed;color:#5c6178}.small{padding:7px 11px;font-size:11px}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:34px}.stat{border:1px solid var(--border);background:white;border-radius:12px;padding:21px 23px;display:flex;justify-content:space-between;align-items:center}.stat-label{font-size:11px;color:#8b8f9f;margin-bottom:12px}.stat-number{font-size:27px;font-weight:650;line-height:1}.stat-number small{font-size:11px;margin-left:5px;font-weight:400;color:var(--muted)}.stat-symbol{width:39px;height:39px;border-radius:12px;background:#f1eefd;color:var(--purple);display:grid;place-items:center;font-size:19px}.stat:nth-child(2) .stat-symbol{color:#3a91af;background:#ebf7fc}.stat:nth-child(3) .stat-symbol{color:#2b9474;background:#eaf8f1}.stat:nth-child(4) .stat-symbol{color:#ce9941;background:#fff5e4}.planner-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:23px;gap:16px}.month-control{display:flex;align-items:center;gap:12px}.month-control h2{font-size:20px;letter-spacing:-.6px;white-space:nowrap;margin:0}.icon-button{border:1px solid var(--border);border-radius:7px;background:white;width:29px;height:29px;font-size:20px;color:#81869b;display:grid;place-items:center}.month-control input{width:135px;font-size:11px;border:0;background:transparent;color:#8b8f9f;padding:5px}.filters{display:flex;gap:9px}select{border:1px solid #e5e5ef;border-radius:7px;background:white;padding:9px 29px 9px 12px;color:#60667b;font-size:12px}.section-label{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:14px}.section-label b{color:var(--purple);margin-left:7px}.muted{color:var(--muted);font-size:11px}.plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.plan-card{padding:21px;border:1px solid var(--border);border-radius:12px;background:white;text-align:left;position:relative;transition:box-shadow .15s,border-color .15s;color:var(--ink);min-width:0}.plan-card:hover{border-color:#cfc5f5;box-shadow:0 5px 20px #20253b06}.plan-card.selected{border-color:#9f8ee6;background:#fdfcff;box-shadow:0 0 0 1px #9f8ee61a}.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;gap:4px}.level{font-size:10px;color:var(--muted)}.badge{font-size:10px;padding:4px 8px;border-radius:5px;display:inline-block;white-space:nowrap}.badge.draft{background:#fff5e6;color:#af812e}.badge.confirmed{background:#eaf6f0;color:#368565}.badge.completed{background:#eeeafc;color:#7c64ba}.plan-card h3{margin:0 0 7px;font-size:16px;letter-spacing:-.4px}.card-teacher{font-size:11px;color:#8a8da0}.card-goal{font-size:11px;line-height:1.7;color:#666c81;margin:20px 0 16px;min-height:36px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.card-bottom{border-top:1px solid var(--border);padding-top:13px;display:flex;justify-content:space-between;color:#8a8da0;font-size:10px}.card-bottom b{font-weight:500;color:var(--purple)}.detail{margin-top:27px;border:1px solid var(--border);border-radius:13px;background:white;overflow:hidden}.detail-heading{padding:24px 26px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);gap:14px}.detail-heading h2{font-size:18px;margin:0 0 7px;letter-spacing:-.5px}.detail-meta{font-size:11px;color:var(--muted)}.detail-actions{display:flex;gap:8px}.detail-intro{padding:22px 26px;display:grid;grid-template-columns:1.5fr 1fr;gap:25px;background:#fdfdff}.intro-label{font-size:10px;font-weight:600;color:#a1a4b1;margin-bottom:10px;letter-spacing:.4px}.goals{margin:0;padding-left:16px;color:#666c80;font-size:12px;line-height:1.9}.materials{display:flex;gap:6px;flex-wrap:wrap}.material{background:#f2f1fa;color:#7a729e;font-size:10px;border-radius:5px;padding:6px 9px}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:740px;text-align:left;table-layout:fixed}th{font-size:10px;color:#9095a7;background:#fafafe;font-weight:500;padding:13px 16px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}td{padding:16px;font-size:11px;border-bottom:1px solid #f0f0f6;vertical-align:top;color:#72778c;line-height:1.7}th:first-child,td:first-child{padding-left:26px;width:58px}th:nth-child(2){width:92px}th:nth-child(3){width:21%}th:nth-child(4){width:27%}th:nth-child(5){width:19%}tr:last-child td{border-bottom:0}.unit-title{color:#3f4660;font-weight:600;margin-bottom:4px}.date-number{font-size:12px;color:#5b6178;font-weight:500}.date-day{font-size:10px;color:#a1a5b5}.lesson-kind{font-size:9px;color:#9a88c6}.reflection{padding:19px 26px;border-top:1px solid var(--border);color:#787e91;font-size:12px;white-space:pre-wrap}.empty{padding:55px 25px;text-align:center;background:white;border:1px dashed #dcd8eb;border-radius:12px;grid-column:1/-1;color:#8a8fa2;line-height:1.8}.empty h3{color:#565e76;margin-top:0}footer{display:flex;justify-content:space-between;font-size:10px;color:#a5a9b8;padding:25px 0}dialog{border:0;border-radius:15px;width:min(850px,94vw);max-height:90vh;padding:28px;color:var(--ink);box-shadow:0 25px 100px #23234130}dialog::backdrop{background:#20203966;backdrop-filter:blur(3px)}.dialog-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.dialog-header h2{margin:8px 0 0;font-size:21px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-size:12px;color:#646b81;margin-bottom:17px}label small{font-size:10px;color:#a0a4b3;margin-left:7px}label input,label textarea,label select{display:block;width:100%;padding:10px;border:1px solid #dedfeb;border-radius:7px;margin-top:7px;background:white;color:#424b65;font-size:12px}textarea{resize:vertical}.lesson-editor-heading{display:flex;justify-content:space-between;align-items:center;margin:7px 0 16px}.lesson-editor-heading h3{font-size:14px}.lesson-fields{padding:15px;background:#f8f8fc;border:1px solid var(--border);border-radius:10px;margin-bottom:14px}.lesson-fields-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;font-size:12px;color:#7a6db2}.lesson-fields .form-grid{gap:12px}.lesson-fields label{margin-bottom:10px}.remove-lesson{border:0;background:transparent;color:#a46578;font-size:11px}.dialog-actions{display:flex;justify-content:flex-end;gap:9px;border-top:1px solid var(--border);padding-top:19px}#form-error{font-size:12px;color:#b64b64}#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#303449;color:white;padding:12px 20px;border-radius:10px;font-size:12px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:10}#toast.visible{opacity:1}@media(min-width:1550px){main{padding-top:50px}.plan-card{padding:25px}.card-goal{margin-top:23px}}@media(max-width:1150px){.sidebar{width:210px;padding:30px 16px}.workspace{margin-left:210px}main{padding:30px 25px}.topbar{padding:0 25px}.plan-grid{grid-template-columns:repeat(2,1fr)}.summary{gap:10px}.stat{padding:17px}.stat-symbol{display:none}}@media(max-width:760px){.sidebar{display:none}.workspace{margin-left:0}.topbar{height:60px;padding:0 20px}main{padding:26px 18px}h1{font-size:24px}.page-heading{align-items:flex-start;gap:12px}.page-heading .button{padding:9px 11px;font-size:11px;margin-top:24px}.summary{grid-template-columns:repeat(2,1fr);margin-bottom:25px}.planner-toolbar{align-items:flex-start;flex-direction:column}.month-control{gap:9px}.filters{width:100%}.filters select{flex:1;min-width:0}.section-label .muted{display:none}.plan-grid{gap:10px}.plan-card{padding:16px}.detail-heading{padding:20px;align-items:flex-start;flex-direction:column}.detail-intro{grid-template-columns:1fr;padding:20px;gap:18px}footer{flex-direction:column;gap:8px}.form-grid{grid-template-columns:1fr}dialog{padding:20px}.card-top{flex-wrap:wrap}}@media print{.sidebar,.topbar,.page-heading,.summary,.planner,.detail-actions,footer,dialog,#toast{display:none!important}.workspace{margin:0}main{padding:0}.detail{border:0;margin:0}.detail-intro{background:white}table{min-width:0}th,td{font-size:10px;padding:8px}tr{break-inside:avoid}}
+.calendar-panel{border:1px solid var(--border);border-radius:13px;background:white;margin-bottom:25px;overflow:hidden}.calendar-heading{padding:22px 24px 13px;display:flex;justify-content:space-between;align-items:center;gap:15px}.calendar-heading h3{font-size:16px;margin:0 0 8px;letter-spacing:-.3px}.calendar-heading p{font-size:11px;color:var(--muted);margin:0;line-height:1.6}.calendar-total{background:#f3f0fd;color:#8473bd;border-radius:6px;font-size:11px;padding:7px 10px;white-space:nowrap}.calendar-legend{display:flex;flex-wrap:wrap;gap:15px;padding:3px 24px 18px}.calendar-legend span{display:flex;align-items:center;gap:6px;font-size:10px;color:#868b9d}.legend-dot{width:7px;height:7px;background:var(--event-color);border-radius:50%}.calendar-scroll{overflow-x:auto}.month-calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));min-width:740px}.weekday{background:#fbfbfe;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px;text-align:center;color:#9499aa;font-size:10px}.weekday.sunday{color:#d1939d}.weekday.saturday{color:#839dc9}.calendar-day{min-height:123px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:9px 7px;background:white;min-width:0}.calendar-day:nth-child(7n){border-right:0}.calendar-day.outside{background:#fafbfe}.calendar-day.outside .day-number{color:#c7cad6}.day-number{display:inline-grid;place-items:center;min-width:24px;height:24px;margin:0 0 5px 3px;font-size:11px;color:#9398a9}.calendar-day.sunday .day-number{color:#c38d96}.calendar-day.saturday .day-number{color:#8a9fbf}.calendar-day.today .day-number{border-radius:50%;background:var(--purple);color:white}.calendar-event{display:block;width:100%;border:0;border-left:2px solid var(--event-color);border-radius:4px;padding:6px 7px;text-align:left;background:var(--event-bg);color:var(--event-color);margin-bottom:4px;cursor:pointer}.calendar-event:hover{filter:brightness(.96)}.calendar-event strong{display:block;font-size:10px;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.calendar-event small{display:block;font-size:9px;opacity:.8;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.calendar-event.cancelled{opacity:.6}.calendar-event.cancelled strong{text-decoration:line-through}.selected-lesson td{background:#f3f0ff}.selected-lesson .unit-title{color:var(--purple)}@media(max-width:760px){.calendar-heading{padding:18px 16px 12px}.calendar-heading p{max-width:240px}.calendar-total{font-size:10px}.calendar-legend{padding-left:16px;padding-right:16px;gap:10px}.month-calendar{min-width:770px}}@media print{.calendar-panel{display:none}}
+.roster-add{margin:18px 10px 0;justify-content:center}.roster-empty{padding:4px 12px}.header-actions{display:flex;gap:8px}.page-error{border:1px solid #edcbd1;color:#a34b5b;background:#fff6f7;border-radius:10px;padding:14px;margin-bottom:20px;font-size:12px}.setup-hint{background:#f0edff;border:1px solid #dfd7f8;border-radius:12px;padding:23px;display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;gap:15px}.setup-hint[hidden]{display:none}.setup-hint strong{font-size:14px;color:#6d5bb0}.setup-hint p{font-size:11px;color:#8e83ae;margin:10px 0 0;line-height:1.7}.day-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}.day-heading .day-number{margin-bottom:0}.day-add{border:0;background:transparent;color:#a7a4bc;font-size:15px;border-radius:5px;width:25px;height:25px}.day-add:hover{color:var(--purple);background:#f0edff}.calendar-day{min-height:142px}.calendar-event{padding:8px;margin-bottom:6px}.event-time{font-weight:400;margin-left:4px;font-size:9px}.event-status{display:block;font-size:8px;opacity:.65;margin-top:5px}.form-error{color:#b64b64;font-size:12px}.dialog-actions{align-items:center}.dialog-actions #save-state{margin-right:auto;max-width:60%;line-height:1.6}button:disabled{cursor:default;opacity:.45}#roster-editor{width:min(440px,94vw)}#editor{width:min(730px,94vw)}.calendar-panel{margin-bottom:0}.calendar-heading{padding-top:25px}.month-calendar .calendar-day:nth-last-child(-n+7){border-bottom:0}@media(max-width:760px){.page-heading{flex-direction:column;gap:18px}.page-heading .button{margin-top:0}.header-actions{width:100%;justify-content:flex-end}.setup-hint{align-items:flex-start;flex-direction:column}.filters{flex-wrap:wrap}.filters .button{flex-shrink:0}.day-add{background:#f4f2fb}.dialog-actions #save-state{display:none}}
+.calendar-export{display:flex;align-items:center;gap:10px}@media(max-width:760px){.calendar-export{flex-direction:column;align-items:flex-end;gap:7px}.calendar-heading{align-items:flex-start}}
+
+.brand{font-size:21px;letter-spacing:-.6px}
+.month-calendar{min-width:1050px}.calendar-day{min-height:240px}.inline-lesson{padding:8px;background:#fbfaff;border:1px solid #ece7f8;border-radius:7px;margin-bottom:6px}.inline-lesson fieldset{border:0;margin:0;padding:0;min-width:0}.inline-lesson input,.inline-lesson textarea,.inline-lesson select{display:block;width:100%;min-width:0;padding:7px 6px;border:1px solid #e5e1f0;border-radius:5px;font-size:10px;color:#56516b;background:white;margin:0 0 6px}.inline-lesson textarea{line-height:1.6;resize:vertical;min-height:67px}.inline-lesson input::placeholder,.inline-lesson textarea::placeholder{color:#b0aabc}.inline-details{margin-top:8px}.inline-details summary{cursor:pointer;font-size:9px;color:#9386b1;margin-bottom:8px}.inline-details label{font-size:9px;margin-bottom:8px}.inline-details label textarea{margin-top:4px}.inline-details label input,.inline-details label select{margin-top:4px}.inline-actions{display:flex;align-items:center;gap:5px;justify-content:flex-end;margin-top:9px}.inline-actions>span{margin-right:auto;font-size:8px;color:#aaa1ba}.inline-actions button{border:0;border-radius:4px;font-size:9px;padding:5px 7px;white-space:nowrap}.inline-save{background:var(--purple);color:white}.inline-cancel{background:#eeeaf6;color:#8d7ba8}.inline-error{font-size:9px;color:#b64b64;line-height:1.6;margin:0}.inline-error:empty{display:none}.saved-event{cursor:default;padding:9px;white-space:normal}.saved-title{font-weight:600;font-size:10px;line-height:1.6;margin-top:5px;overflow-wrap:anywhere}.saved-content{white-space:pre-wrap;overflow-wrap:anywhere;font-size:10px;line-height:1.7;margin-top:5px}.saved-actions{display:flex;justify-content:space-between;align-items:center;gap:5px;margin-top:7px}.saved-actions button{font-size:9px;border:0;background:#ffffff80;color:inherit;border-radius:4px;padding:4px 7px}.saved-details{margin-top:7px}.saved-details summary{font-size:9px;cursor:pointer}.day-empty-note{font-size:9px;color:#bbb6c7}@media(max-width:760px){.month-calendar{min-width:1050px}}
+.archive-panel{background:white;border:1px solid var(--border);border-radius:13px;padding:22px 24px;margin-bottom:24px}.archive-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}.archive-heading h2{font-size:16px;margin:0 0 8px}.archive-heading p,.archive-message{font-size:12px;color:var(--muted);line-height:1.7}.archive-heading p{margin:0}.archive-message{margin:18px 0 0}.archive-month{margin-top:20px}.archive-month h3{font-size:13px;margin:0 0 10px}.archive-month h3 small{font-weight:400;color:var(--muted);font-size:11px;margin-left:12px}.archive-teachers{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}.archive-plan{display:flex;flex-direction:column;align-items:flex-start;gap:7px;text-align:left;border:1px solid var(--border);border-radius:9px;background:#fbfbfe;padding:14px;color:var(--ink);cursor:pointer;overflow-wrap:anywhere}.archive-plan:hover,.archive-plan.selected{border-color:var(--purple);background:#f3f0fd}.archive-plan strong{font-size:12px}.archive-plan span{font-size:11px;color:var(--muted)}.archive-plan small{font-size:10px;color:var(--purple)}.archive-plan:focus-visible{outline:2px solid var(--purple);outline-offset:3px}@media(max-width:760px){.archive-panel{padding:18px 16px}.archive-heading{align-items:flex-start}.archive-teachers{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+.simple-entry{padding:0;background:transparent;border:0;border-radius:0}.simple-entry textarea{background:transparent;border:1px solid transparent;border-radius:4px;font-size:12px;line-height:1.8;min-height:145px;padding:8px 5px;margin-bottom:0}.simple-entry textarea:hover{border-color:#eeeaf6}.simple-entry textarea:focus{outline:none;border-color:var(--purple);background:#fbfaff}.simple-entry input[type=hidden]{display:none}.simple-entry select{background:#faf9fc;font-size:10px;margin-bottom:4px}.simple-entry .inline-actions{margin-top:5px}.simple-entry .inline-cancel{background:transparent;color:#aaa1ba}.saved-actions{justify-content:flex-end}.calendar-day{min-height:220px}
+/* Readable calendar workspace */
+:root {
+  --ink: #172033;
+  --muted: #526079;
+  --purple: #5140ad;
+  --border: #d8dfeb;
+  --bg: #f1f4f9;
+}
+body { font-size: 15px; line-height: 1.6; }
+main { max-width: 1600px; padding: 32px 32px 24px; }
+.sidebar { padding: 30px 18px; }
+.brand { font-size: 22px; line-height: 1.3; }
+.brand small { font-size: 12px; letter-spacing: 0; margin-top: 8px; }
+.nav-label { color: var(--muted); font-size: 12px; letter-spacing: .5px; margin-top: 34px; }
+.nav { font-size: 15px; color: var(--ink); }
+.nav.active { background: #eeeafb; color: #40328b; }
+.roster-label span { font-size: 12px; font-weight: 500; }
+.teacher-nav-button { color: #34415a; font-size: 14px; padding: 13px 10px; gap: 8px; }
+.teacher-nav-button.selected { background: #eeeafb; color: #40328b; font-weight: 700; }
+.teacher-nav-button small { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.avatar { color: #40328b; background: #e5dff7; font-size: 14px; }
+.sidebar-bottom { font-size: 12px; color: #34415a; }
+.topbar { height: 64px; padding: 0 32px; font-size: 14px; background: white; }
+.topbar strong { color: var(--ink); font-weight: 600; }
+.slash { color: var(--muted); }
+.demo-pill { color: #34415a; font-size: 12px; }
+.demo-pill i { background: #26815b; width: 7px; height: 7px; }
+.page-heading { margin-bottom: 24px; gap: 18px; }
+.eyebrow { font-size: 12px; letter-spacing: 1px; color: #40328b; }
+h1 { font-size: 32px; font-weight: 750; line-height: 1.35; margin: 8px 0 10px; letter-spacing: -.8px; }
+.page-heading p { font-size: 15px; line-height: 1.7; }
+.button { font-size: 14px; padding: 10px 16px; min-height: 42px; }
+.button.small { font-size: 13px; padding: 8px 12px; min-height: 38px; }
+.button.secondary { color: #28364d; border-color: #c4cede; }
+.button.secondary:hover { background: #f2f4fa; border-color: #8e9cb4; }
+.button.primary:hover, .inline-save:hover { background: #40328b; }
+.icon-button { width: 38px; height: 38px; font-size: 24px; color: #34415a; border-color: #c4cede; }
+.icon-button:hover { background: #eeeafb; }
+.archive-panel, .calendar-panel { border-color: #d0d9e7; box-shadow: 0 3px 12px #17203305; }
+.archive-panel { padding: 24px; margin-bottom: 26px; }
+.archive-heading h2 { font-size: 19px; font-weight: 750; margin-bottom: 5px; }
+.archive-heading p, .archive-message { font-size: 14px; }
+.archive-month { margin-top: 20px; }
+.archive-month h3 { font-size: 16px; color: var(--ink); margin-bottom: 10px; }
+.archive-month h3 small { font-size: 13px; }
+.archive-teachers { grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 12px; }
+.archive-plan { background: #f8f9fc; border-color: #cfd8e7; padding: 16px; gap: 5px; }
+.archive-plan strong { font-size: 15px; color: var(--ink); }
+.archive-plan span { font-size: 14px; }
+.archive-plan small { font-size: 13px; font-weight: 600; color: #40328b; }
+.archive-plan.selected { background: #eeeafb; border-color: #5140ad; box-shadow: inset 3px 0 #5140ad; }
+.archive-plan:hover { background: #f0edfa; border-color: #5140ad; }
+.planner-toolbar { gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.month-control { gap: 10px; }
+.month-control h2 { font-size: 25px; font-weight: 750; }
+.month-control input { width: 158px; font-size: 14px; color: #34415a; background: white; border: 1px solid #c4cede; border-radius: 7px; padding: 7px 9px; min-height: 38px; }
+.filters { flex-wrap: wrap; }
+select { font-size: 14px; color: #28364d; border-color: #c4cede; min-height: 40px; }
+.calendar-heading { padding: 24px 24px 14px; }
+.calendar-heading h3 { font-size: 20px; font-weight: 750; margin-bottom: 6px; }
+.calendar-heading p { font-size: 14px; line-height: 1.7; }
+.calendar-total { color: #40328b; background: #eeeafb; font-size: 13px; font-weight: 600; padding: 8px 10px; }
+.calendar-legend { padding: 0 24px 20px; gap: 16px; }
+.calendar-legend span { font-size: 13px; color: #34415a; font-weight: 600; }
+.legend-dot { width: 9px; height: 9px; }
+.weekday { color: #34415a; font-size: 14px; font-weight: 700; background: #edf1f7; padding: 12px 8px; }
+.weekday.sunday, .calendar-day.sunday .day-number { color: #b22c40; }
+.weekday.saturday, .calendar-day.saturday .day-number { color: #235aa5; }
+.calendar-day { min-height: 240px; padding: 11px 9px; border-color: #d5deeb; }
+.calendar-day.outside { background: #f3f5f9; }
+.calendar-day.outside .day-number { color: #68758b; }
+.calendar-day.today { background: #faf8ff; }
+.day-heading { margin-bottom: 8px; }
+.day-number { font-size: 15px; font-weight: 700; color: #26344c; min-width: 30px; height: 30px; }
+.calendar-day.today .day-number { color: white; background: #5140ad; }
+.day-add { width: 30px; height: 30px; font-size: 20px; color: #526079; }
+.simple-entry textarea { font-size: 14px; line-height: 1.85; color: #172033; min-height: 150px; padding: 8px 5px; }
+.inline-lesson textarea::placeholder { color: #606d83; opacity: 1; }
+.simple-entry textarea:hover { border-color: #c4cede; }
+.simple-entry textarea:focus { border-color: #5140ad; outline: 2px solid #5140ad; outline-offset: 1px; background: white; }
+.simple-entry select { font-size: 13px; color: #28364d; border-color: #c4cede; min-height: 36px; }
+.inline-actions { gap: 8px; }
+.inline-actions button { font-size: 12px; min-height: 34px; padding: 6px 10px; border-radius: 6px; font-weight: 600; }
+.simple-entry .inline-cancel { color: #526079; }
+.simple-entry .inline-cancel:hover { color: #28364d; background: #edf1f7; }
+.inline-save { background: #5140ad; color: white; }
+.inline-error, .form-error { font-size: 13px; color: #a3203a; }
+.saved-event { padding: 11px 9px; border-left-width: 3px; color: #172033; }
+.saved-event:hover { filter: none; }
+.calendar-event strong { font-size: 13px; color: #34415a; white-space: normal; overflow-wrap: anywhere; }
+.saved-title { font-size: 14px; color: #172033; line-height: 1.7; }
+.saved-content { font-size: 14px; color: #172033; line-height: 1.85; margin-top: 5px; }
+.saved-actions button { font-size: 12px; font-weight: 600; color: #40328b; background: white; border: 1px solid #c5bfde; min-height: 32px; padding: 5px 10px; }
+.saved-actions button:hover { background: #eeeafb; }
+.day-empty-note { color: var(--muted); font-size: 13px; }
+.setup-hint strong { font-size: 16px; color: #40328b; }
+.setup-hint p { font-size: 14px; color: #526079; }
+.muted { font-size: 14px; }
+label { font-size: 14px; color: #34415a; }
+label input, label textarea, label select { font-size: 15px; color: #172033; border-color: #c4cede; }
+footer { font-size: 12px; color: #526079; gap: 12px; flex-wrap: wrap; }
+#toast { font-size: 14px; background: #172033; }
+@media (max-width: 1150px) {
+  main { padding: 28px 24px 20px; }
+  .topbar { padding: 0 24px; }
+  .brand { font-size: 19px; }
+  .teacher-nav-button { flex-wrap: wrap; }
+  .teacher-nav-button small { margin-left: 40px; }
+}
+@media (max-width: 760px) {
+  main { padding: 22px 16px; }
+  .topbar { padding: 0 16px; font-size: 13px; }
+  h1 { font-size: 27px; }
+  .page-heading .button { font-size: 14px; padding: 9px 13px; }
+  .archive-panel { padding: 20px 16px; }
+  .archive-heading { align-items: flex-start; }
+  .archive-heading h2 { font-size: 18px; }
+  .archive-teachers { grid-template-columns: repeat(auto-fill,minmax(150px,1fr)); }
+  .archive-month h3 small { display: block; margin-left: 0; margin-top: 2px; }
+  .month-control { flex-wrap: wrap; width: 100%; }
+  .month-control h2 { font-size: 23px; }
+  .month-control input { width: 150px; }
+  .filters { width: 100%; }
+  .calendar-heading { padding: 20px 16px 14px; flex-wrap: wrap; }
+  .calendar-heading p { max-width: none; }
+  .calendar-export { flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .calendar-legend { padding: 0 16px 16px; }
+}
+@media print { .archive-panel { display: none; } }
+.button.danger{background:white;border-color:#dba5ae;color:#a3203a}.button.danger:hover:not(:disabled){background:#fff0f2;border-color:#a3203a}.header-actions{flex-wrap:wrap}.header-actions .button{justify-content:center}
+.calendar-day.holiday{background:#fff8f8}.calendar-day.holiday .day-number{color:#b22c40}.calendar-day.today.holiday .day-number{color:white;background:#b22c40}.holiday-name{font-size:12px;font-weight:700;line-height:1.6;color:#b22c40;margin:0 3px 8px;overflow-wrap:anywhere}.holiday-notice{font-size:13px;line-height:1.7;background:#fff9eb;border:1px solid #e2cf9a;border-radius:8px;padding:10px 14px;color:#725014}.holiday-notice[hidden]{display:none}
+
+#login-screen[hidden]{display:none}#login-screen{position:fixed;inset:0;z-index:9999;background:#f4f5fb;display:grid;place-items:center}#login-form{background:white;padding:32px;max-width:420px;width:90%;border-radius:16px}#login-form input{width:100%;margin:16px 0;padding:12px}#login-error{color:#b22c40}</style><script>'use strict';
+// Official annual dates; do not extrapolate lunar or substitute holidays.
+// Sources and update instructions: docs/korean-holidays.md.
+(function(root){
+  const years={
+    '2026':{
+      '01-01':'신정',
+      '02-16':'설날 연휴','02-17':'설날','02-18':'설날 연휴',
+      '03-01':'삼일절','03-02':'대체공휴일 (삼일절)',
+      '05-01':'노동절','05-05':'어린이날','05-24':'부처님오신날','05-25':'대체공휴일 (부처님오신날)',
+      '06-03':'전국동시지방선거','06-06':'현충일',
+      '07-17':'제헌절',
+      '08-15':'광복절','08-17':'대체공휴일 (광복절)',
+      '09-24':'추석 연휴','09-25':'추석','09-26':'추석 연휴',
+      '10-03':'개천절','10-05':'대체공휴일 (개천절)','10-09':'한글날',
+      '12-25':'성탄절'
+    },
+    '2027':{
+      '01-01':'신정',
+      '02-06':'설날 연휴','02-07':'설날','02-08':'설날 연휴','02-09':'대체공휴일 (설날)',
+      '03-01':'삼일절',
+      '05-01':'노동절','05-03':'대체공휴일 (노동절)','05-05':'어린이날','05-13':'부처님오신날',
+      '06-06':'현충일',
+      '07-17':'제헌절','07-19':'대체공휴일 (제헌절)',
+      '08-15':'광복절','08-16':'대체공휴일 (광복절)',
+      '09-14':'추석 연휴','09-15':'추석','09-16':'추석 연휴',
+      '10-03':'개천절','10-04':'대체공휴일 (개천절)','10-09':'한글날','10-11':'대체공휴일 (한글날)',
+      '12-25':'성탄절','12-27':'대체공휴일 (성탄절)'
+    }
+  };
+  const holidays={
+    supportedYears:Object.keys(years),
+    supports(year){return Object.hasOwn(years,String(year));},
+    name(date){return years[String(date).slice(0,4)]?.[String(date).slice(5)]||'';}
+  };
+  if(typeof module!=='undefined' && module.exports)module.exports=holidays;
+  else root.KoreanHolidays=holidays;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script></head>
+<body><section id="login-screen"><form id="login-form"><h2>수학 월별 레슨플랜</h2><p>선생님 공용 접속 비밀번호를 입력하세요.</p><input id="login-password" type="password" autocomplete="current-password" required aria-label="접속 비밀번호"><p id="login-error" role="alert"></p><button id="login-button" type="submit" class="button primary">접속</button></form></section>
+<aside class="sidebar"><a class="brand" href="#"><span>PLATFORM MATH<small>수업을 설계하는 시간</small></span></a><div class="nav-label">WORKSPACE</div><div class="nav active"><span>▦</span> 레슨플랜 캘린더</div><div class="nav-label roster-label">TEACHERS <span>선생님별 저장</span></div><div id="teacher-nav"></div><button class="button secondary small roster-add" id="add-teacher">＋ 선생님 등록</button><div class="sidebar-bottom"><div>PLATFORM MATH workspace<small>선생님별 레슨플랜</small></div></div></aside>
+<div class="workspace"><main>
+<div class="page-heading"><div><div class="eyebrow">YOUR TEACHING CALENDAR</div><h1>수학수업을 위한 레슨플렌</h1><p>본인을 선택하고, 캘린더 날짜 칸에 바로 수업 내용을 입력하세요.</p></div><div class="header-actions"><button class="button secondary" id="mobile-add-teacher">선생님 등록</button><button class="button danger" id="delete-teacher" disabled>선생님 삭제</button></div></div>
+<div id="page-error" class="page-error" role="alert" hidden></div>
+<section class="archive-panel" aria-labelledby="archive-title"><div class="archive-heading"><div><h2 id="archive-title">월별 레슨플랜 보관함</h2><p>월별로 모인 선생님의 레슨플랜을 클릭하면 캘린더에 불러옵니다.</p></div><button type="button" class="button secondary small" id="refresh-archive">새로고침</button></div><div id="lesson-archive" aria-live="polite"></div></section>
+<section id="setup-hint" class="setup-hint" hidden><div><strong>첫 선생님을 등록하고 시작하세요.</strong><p>선생님 등록 → 담당 반 등록 → 캘린더 날짜 선택 → 레슨플랜 저장</p></div><button class="button primary" id="setup-teacher">선생님 등록</button></section>
+<p id="holiday-notice" class="holiday-notice" role="status" hidden></p>
+<div class="planner-toolbar"><div class="month-control"><button class="icon-button" id="prev-month" aria-label="이전 달">‹</button><h2 id="month-title"></h2><button class="icon-button" id="next-month" aria-label="다음 달">›</button><input type="month" id="month-input" aria-label="대상 월"></div><div class="filters"><select id="teacher-filter" aria-label="작성 선생님"></select><select id="class-filter" aria-label="반 선택"></select><button class="button secondary small" id="add-class">＋ 반 등록</button><button class="button danger small" id="delete-class" disabled title="삭제할 반을 먼저 선택하세요">반 삭제</button></div></div>
+<section class="calendar-panel" aria-label="선생님별 레슨플랜 캘린더"><div class="calendar-heading"><div><h3 id="calendar-title"></h3><p id="calendar-caption">날짜 칸에서 내용을 입력하고 저장하세요. 저장된 수업도 같은 칸에서 수정합니다.</p></div><div class="calendar-export"><span id="calendar-total" class="calendar-total"></span><button class="button secondary small" id="export-word" disabled>↓ 캘린더 Word</button></div></div><div id="calendar-legend" class="calendar-legend"></div><div class="calendar-scroll"><div id="month-calendar" class="month-calendar"></div></div></section>
+<footer><span id="save-description">저장한 레슨플랜은 Google 스프레드시트에 보관됩니다.</span><span>다른 달의 기록도 월을 바꾸면 다시 볼 수 있어요.</span></footer></main></div>
+<dialog id="roster-editor"><form id="roster-form"><div class="dialog-header"><div><div class="eyebrow">WORKSPACE SETUP</div><h2 id="roster-title"></h2></div><button type="button" class="icon-button close-roster" aria-label="닫기">×</button></div><p id="roster-owner" class="muted"></p><label id="roster-name-label">이름<input name="name" required maxlength="100" placeholder=""></label><label id="level-label" hidden>학년 · 수준 (선택)<input name="level" maxlength="100" placeholder="예: 중등 1학년"></label><p class="form-error" role="alert"></p><div class="dialog-actions"><button type="button" class="button secondary close-roster">취소</button><button type="submit" class="button primary">등록</button></div></form></dialog><div id="toast" role="status"></div><script>let appSession = '';
+function gasCall(name,...args) {
+  return new Promise((resolve,reject) => google.script.run.withSuccessHandler(resolve).withFailureHandler(error=>reject(new Error(error.message||'연결 오류')))[name](...args));
+}
+const nativeFetch = window.fetch.bind(window);
+window.fetch = async (url, options={}) => {
+  if (typeof url !== 'string' || !url.startsWith('/api/')) return nativeFetch(url,options);
+  const result = await gasCall('apiRequest',appSession,url,options.method||'GET',options.body?JSON.parse(options.body):{});
+  if(result.status===401)document.getElementById('login-screen').hidden=false;
+  if(result.status===200 && result.data.base64) {
+    const bytes=Uint8Array.from(atob(result.data.base64),c=>c.charCodeAt(0));
+    return new Response(bytes,{status:200,headers:{'Content-Type':'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}});
+  }
+  return new Response(JSON.stringify(result.data),{status:result.status,headers:{'Content-Type':'application/json'}});
+};
+document.getElementById('login-form').onsubmit=async event=>{
+  event.preventDefault();const button=document.getElementById('login-button'),error=document.getElementById('login-error');button.disabled=true;error.textContent='';
+  try {
+    appSession=await gasCall('authLogin',document.getElementById('login-password').value);
+    document.getElementById('login-password').value='';document.getElementById('login-screen').hidden=true;
+    await bootstrap();
+  } catch(e){error.textContent=e.message;}
+  finally{button.disabled=false;}
+};
+
+'use strict';
+const $=s=>document.querySelector(s);
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const statuses={draft:'초안',confirmed:'확정',completed:'완료'};
+const now=new Date();
+const dateString=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+let month=dateString(now).slice(0,7),teachers=[],classes=[],lessons=[],teacherId='',classFilter='',loading=true,loadSequence=0,rosterMode='',rosterTeacher='';
+let toastTimer; let exporting=false; const drafts=new Map(), editingKeys=new Set(), savingKeys=new Set(), expandedDates=new Set();
+let archive=[],archiveLoading=true,archiveError='',archiveSequence=0;
+let deleting=false;
+const monthLabel=value=>`${value.slice(0,4)}년 ${Number(value.slice(5))}월`;
+async function loadArchive(){
+  const seq=++archiveSequence;archiveLoading=true;archiveError='';renderArchive();
+  try{const data=await api('/api/lesson-plan-archive');if(seq!==archiveSequence)return;archive=data;}catch(e){if(seq!==archiveSequence)return;archiveError=e.message;}
+  if(seq!==archiveSequence)return;archiveLoading=false;renderArchive();
+}
+function renderArchive(){
+  $('#refresh-archive').disabled=archiveLoading;
+  if(archiveError){$('#lesson-archive').innerHTML=`<p class="archive-message" role="alert">${esc(archiveError)} 새로고침을 눌러 다시 불러오세요.</p>`;return;}
+  if(archiveLoading){$('#lesson-archive').innerHTML='<p class="archive-message">저장된 레슨플랜을 불러오는 중…</p>';return;}
+  $('#lesson-archive').innerHTML=archive.map(group=>`<section class="archive-month"><h3>${monthLabel(group.month)}<small>${group.teachers.length}명 · ${group.teachers.reduce((sum,t)=>sum+t.lesson_count,0)}개 계획</small></h3><div class="archive-teachers">${group.teachers.map(t=>{const selected=group.month===month&&t.teacher_id===teacherId;return `<button type="button" class="archive-plan ${selected?'selected':''}" data-archive-month="${group.month}" data-archive-teacher="${esc(t.teacher_id)}" aria-pressed="${selected}"><strong>${esc(t.teacher_name)} 선생님</strong><span>${t.lesson_count}개 계획 · ${t.class_count}개 반</span><small>${selected?'현재 보고 있는 계획':'클릭하여 불러오기'}</small></button>`;}).join('')}</div></section>`).join('')||'<p class="archive-message">아직 저장된 레슨플랜이 없습니다. 날짜 칸에서 저장하면 해당 월에 자동으로 모입니다.</p>';
+}
+$('#refresh-archive').onclick=loadArchive;
+$('#lesson-archive').onclick=e=>{const button=e.target.closest('[data-archive-month]');if(!button)return;month=button.dataset.archiveMonth;teacherId=button.dataset.archiveTeacher;classFilter='';loadLessons();$('#month-title').scrollIntoView({behavior:'smooth',block:'start'});};
+const assigned=()=>classes.filter(c=>c.teacher_ids.includes(teacherId));
+const currentTeacher=()=>teachers.find(t=>t.id===teacherId);
+function notify(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3500);}
+function error(message=''){$('#page-error').textContent=message;$('#page-error').hidden=!message;}
+async function api(url,method='GET',body){const response=await fetch(url,{method,headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined});const data=await response.json();if(!response.ok)throw Error(data.error||'요청을 처리하지 못했습니다.');return data;}
+function lessonUrl(owner=teacherId,targetMonth=month){return `/api/teachers/${encodeURIComponent(owner)}/months/${targetMonth}/lessons`;}
+function options(items,all,selected){return (all?`<option value="">${esc(all)}</option>`:'')+items.map(item=>`<option value="${esc(item.id)}" ${item.id===selected?'selected':''}>${esc(item.name)}</option>`).join('');}
+async function bootstrap(preferred){const state=await api('/api/bootstrap');teachers=state.teachers;classes=state.classes;teacherId=teachers.some(t=>t.id===(preferred||teacherId))?(preferred||teacherId):(teachers[0]?.id||'');await Promise.all([loadLessons(),loadArchive()]);}
+async function loadLessons(){const seq=++loadSequence;loading=true;lessons=[];error();render();try{const data=teacherId?await api(lessonUrl()):[];if(seq!==loadSequence)return;lessons=data;}catch(e){if(seq!==loadSequence)return;error(e.message);}if(seq!==loadSequence)return;loading=false;render();}
+function render(){
+  renderArchive();
+  const owner=currentTeacher(),owned=assigned();if(classFilter&&!owned.some(c=>c.id===classFilter))classFilter='';
+  $('#month-title').textContent=`${month.slice(0,4)}년 ${Number(month.slice(5))}월`;$('#month-input').value=month;
+  $('#holiday-notice').hidden=KoreanHolidays.supports(month.slice(0,4));
+  $('#holiday-notice').textContent=`${month.slice(0,4)}년 공휴일 정보는 아직 준비되지 않았습니다. 현재 2026·2027년 공휴일을 표시합니다.`;
+  $('#teacher-filter').innerHTML=options(teachers,teachers.length?'':'선생님을 등록해주세요',teacherId);$('#teacher-filter').disabled=!teachers.length;
+  $('#class-filter').innerHTML=options(owned,'전체 반',classFilter);$('#class-filter').disabled=!owned.length;
+  $('#teacher-nav').innerHTML=teachers.map(t=>`<button class="teacher-nav-button ${t.id===teacherId?'selected':''}" data-teacher="${esc(t.id)}"><span class="avatar">${esc(t.name[0])}</span>${esc(t.name)} 선생님<small>${classes.filter(c=>c.teacher_ids.includes(t.id)).length}개 반</small></button>`).join('')||'<p class="muted roster-empty">등록된 선생님이 없습니다.</p>';
+  $('#setup-hint').hidden=teachers.length>0;$('#add-class').disabled=!teacherId;
+  $('#delete-teacher').disabled=!teacherId||deleting||savingKeys.size>0;
+  $('#delete-class').disabled=!classFilter||deleting||savingKeys.size>0;
+  $('#delete-class').title=classFilter?'선택한 반 삭제':'삭제할 반을 먼저 선택하세요';
+  $('#calendar-title').textContent=owner?`${owner.name} 선생님의 레슨플랜`:'나의 첫 레슨플랜 캘린더';
+  $('#calendar-caption').textContent=owner&&!owned.length?'먼저 담당 반을 등록해주세요. 반 등록 후 날짜 칸에서 바로 입력할 수 있습니다.':'날짜 칸에서 내용을 입력하고 저장하세요. 저장된 수업도 같은 칸에서 수정합니다.';
+  const visible=lessons.filter(l=>!classFilter||l.class_id===classFilter);
+  $('#export-word').disabled=loading||exporting||!visible.length;
+  $('#calendar-total').textContent=loading?'불러오는 중…':`${visible.length}개 계획 · ${owned.length}개 반`;
+  const palette=[['#8370c4','#f0ecfb'],['#328b85','#e9f6f3'],['#5588b9','#edf3fb'],['#b98a40','#fcf4e7']];
+  const colorFor=id=>palette[Math.max(0,owned.findIndex(c=>c.id===id))%palette.length];
+  $('#calendar-legend').innerHTML=owned.map(c=>`<span style="--event-color:${colorFor(c.id)[0]}"><i class="legend-dot"></i>${esc(c.name)}</span>`).join('');
+  const [year,m]=month.split('-').map(Number),first=new Date(year,m-1,1),last=new Date(year,m,0),cells=Math.ceil((first.getDay()+last.getDate())/7)*7;
+  let html=['일','월','화','수','목','금','토'].map((name,i)=>`<div class="weekday ${i===0?'sunday':i===6?'saturday':''}">${name}</div>`).join('');
+  for(let i=0;i<cells;i++){
+    const d=new Date(year,m-1,1-first.getDay()+i),date=dateString(d),outside=d.getMonth()!==m-1,dow=d.getDay();
+    const events=outside?[]:visible.filter(l=>l.date===date).sort((a,b)=>(a.start_time||'').localeCompare(b.start_time||''));
+    const dateKey=draftKey(date);
+    const holiday=outside?'':KoreanHolidays.name(date);
+    html+=`<div data-date="${date}" class="calendar-day ${outside?'outside':''} ${dow===0?'sunday':dow===6?'saturday':''} ${date===dateString(now)?'today':''} ${holiday?'holiday':''}"><div class="day-heading"><span class="day-number">${d.getDate()}</span>${outside||!owned.length?'':`<button class="day-add" data-add-date="${date}" aria-label="${date} 수업 추가" ${loading?'disabled':''}>＋</button>`}</div>${holiday?`<div class="holiday-name">${esc(holiday)}</div>`:''}${events.map(l=>{
+      const color=colorFor(l.class_id),cl=classes.find(c=>c.id===l.class_id),key=draftKey(date,l.id);
+      if(editingKeys.has(key))return inlineForm(date,l);
+      return `<article class="calendar-event saved-event" data-lesson="${esc(l.id)}" style="--event-color:${color[0]};--event-bg:${color[1]}"><strong>${esc(cl?.name||'반')}</strong>${l.title?`<div class="saved-title">${esc(l.title)}</div>`:''}<div class="saved-content">${esc(l.activities)}</div><div class="saved-actions"><button type="button" data-edit-lesson="${esc(l.id)}">수정</button></div></article>`;
+    }).join('')}${outside||loading?'':owned.length?(!events.length||expandedDates.has(dateKey)||drafts.has(dateKey)?inlineForm(date):''):`<span class="day-empty-note">${owner?'반을 등록해주세요':'선생님을 등록해주세요'}</span>`}</div>`;
+  }
+  $('#month-calendar').innerHTML=html;
+  $('#save-description').textContent=owner?`${owner.name} 선생님의 계획은 Google 스프레드시트에 저장됩니다.`:'선생님 등록 후 레슨플랜을 작성할 수 있습니다.';
+}
+function moveMonth(delta){const [y,m]=month.split('-').map(Number);month=dateString(new Date(y,m-1+delta,1)).slice(0,7);loadLessons();}
+$('#prev-month').onclick=()=>moveMonth(-1);$('#next-month').onclick=()=>moveMonth(1);
+$('#month-input').onchange=e=>{if(/^\d{4}-(0[1-9]|1[0-2])$/.test(e.target.value)){month=e.target.value;loadLessons();}};
+$('#teacher-filter').onchange=e=>{teacherId=e.target.value;classFilter='';loadLessons();};
+$('#class-filter').onchange=e=>{classFilter=e.target.value;render();};
+$('#teacher-nav').onclick=e=>{const button=e.target.closest('[data-teacher]');if(button){teacherId=button.dataset.teacher;classFilter='';loadLessons();}};
+async function deleteRoster(kind){
+  if(deleting||savingKeys.size){notify('저장이 끝난 뒤 삭제해주세요.');return;}
+  const target=kind==='teacher'?currentTeacher():assigned().find(c=>c.id===classFilter);if(!target)return;
+  const message=kind==='teacher'?`${target.name} 선생님을 삭제할까요?\n선생님 목록과 월별 보관함에서 제외됩니다.`:`${target.name} 반을 삭제할까요?\n담당 선생님 모두의 캘린더와 보관함에서 해당 반의 계획이 제외됩니다.`;
+  if(!window.confirm(message+'\n기존 저장 기록은 보관되며, 해당 대상의 미저장 내용은 지워집니다.'))return;
+  deleting=true;$('#delete-teacher').disabled=true;$('#delete-class').disabled=true;
+  try{
+    await api(`/api/${kind==='teacher'?'teachers':'classes'}/${encodeURIComponent(target.id)}`,'DELETE',{});
+    for(const [key,draft] of drafts){if(kind==='teacher'?key.split('|')[0]===target.id:draft.class_id===target.id){drafts.delete(key);editingKeys.delete(key);expandedDates.delete(key);}}
+    if(kind==='teacher')teacherId='';classFilter='';
+    await bootstrap();notify(`${target.name}${kind==='teacher'?' 선생님을':' 반을'} 삭제했습니다.`);
+  }catch(e){error(e.message);}finally{deleting=false;render();}
+}
+$('#delete-teacher').onclick=()=>deleteRoster('teacher');
+$('#delete-class').onclick=()=>deleteRoster('class');
+const fieldNames=['class_id','activities'];
+function draftKey(date,id='new'){return `${teacherId}|${month}|${date}|${id}`;}
+function inlineForm(date,lesson=null){
+  const key=draftKey(date,lesson?.id),draft=drafts.get(key)||lesson||{class_id:classFilter||assigned()[0]?.id,status:'draft'};
+  const busy=savingKeys.has(key);
+  const owned=assigned(),classId=draft.class_id||owned[0]?.id;
+  const classControl=owned.length>1?`<select name="class_id" required aria-label="${date} 담당 반">${options(owned,'',classId)}</select>`:`<input type="hidden" name="class_id" value="${esc(classId)}">`;
+  return `<form class="inline-lesson simple-entry" data-key="${esc(key)}" data-date="${date}" data-id="${esc(lesson?.id||'')}" data-revision="${lesson?.revision||0}"><fieldset ${busy?'disabled':''}>${classControl}<textarea name="activities" required rows="6" maxlength="5000" aria-label="${date} 수업 내용" placeholder="수업 내용을 입력하세요">${esc(draft.activities||'')}</textarea><p class="inline-error" role="alert">${esc(draft.error||'')}</p><div class="inline-actions"><button type="button" class="inline-cancel">${lesson?'취소':'비우기'}</button><button class="inline-save" type="submit">${busy?'저장 중…':'저장'}</button></div></fieldset></form>`;
+}
+function captureDraft(form){const value={};for(const name of fieldNames)value[name]=form.elements.namedItem(name).value;drafts.set(form.dataset.key,value);return value;}
+$('#month-calendar').addEventListener('input',e=>{const form=e.target.closest('.inline-lesson');if(form)captureDraft(form);});
+$('#month-calendar').addEventListener('change',e=>{const form=e.target.closest('.inline-lesson');if(form)captureDraft(form);});
+$('#month-calendar').onclick=e=>{
+  const add=e.target.closest('[data-add-date]');
+  if(add){expandedDates.add(draftKey(add.dataset.addDate));render();const form=[...document.querySelectorAll('.inline-lesson')].find(f=>f.dataset.date===add.dataset.addDate&&!f.dataset.id);form?.elements.namedItem('activities').focus();return;}
+  const edit=e.target.closest('[data-edit-lesson]');
+  if(edit){const lesson=lessons.find(l=>l.id===edit.dataset.editLesson);if(lesson){editingKeys.add(draftKey(lesson.date,lesson.id));render();const form=[...document.querySelectorAll('.inline-lesson')].find(f=>f.dataset.id===lesson.id);form?.elements.namedItem('activities').focus();}return;}
+  const cancel=e.target.closest('.inline-cancel');if(cancel){const form=cancel.closest('form'),key=form.dataset.key;if(savingKeys.has(key))return;drafts.delete(key);editingKeys.delete(key);expandedDates.delete(key);render();}
+};
+$('#month-calendar').addEventListener('submit',async e=>{
+  const form=e.target.closest('.inline-lesson');if(!form)return;e.preventDefault();const key=form.dataset.key;if(savingKeys.has(key))return;
+  const input={...captureDraft(form),content_only:true},[owner,targetMonth]=key.split('|');input.date=form.dataset.date;if(form.dataset.id)input.revision=Number(form.dataset.revision);
+  const lessonId=form.dataset.id;savingKeys.add(key);form.querySelector('fieldset').disabled=true;form.querySelector('.inline-save').textContent='저장 중…';
+  try{
+    const saved=await api(lessonUrl(owner,targetMonth)+(lessonId?'/'+lessonId:''),lessonId?'PUT':'POST',input);
+    drafts.delete(key);editingKeys.delete(key);expandedDates.delete(key);
+    if(owner===teacherId && targetMonth===month){const index=lessons.findIndex(l=>l.id===saved.id);if(index<0)lessons.push(saved);else lessons[index]=saved;}
+    if(saved.sheets_sync?.status==='calendar_failed')error('수업은 저장됐지만 캘린더 탭 갱신에 실패했습니다. 다시 수정·저장해주세요.');
+    notify(saved.sheets_sync?.status==='synced'?'Google 스프레드시트에 저장했습니다.':'Google 스프레드시트에 수업을 저장했습니다.');
+    await loadArchive();
+  }catch(err){const draft=drafts.get(key);if(draft)draft.error=err.message;}finally{savingKeys.delete(key);render();}
+});
+window.addEventListener('beforeunload',e=>{if(drafts.size){e.preventDefault();e.returnValue='';}});
+const rosterForm=$('#roster-form'),rosterField=name=>rosterForm.elements.namedItem(name);
+function openRoster(mode){rosterMode=mode;rosterTeacher=teacherId;rosterForm.reset();rosterForm.querySelector('.form-error').textContent='';$('#roster-title').textContent=mode==='teacher'?'선생님 등록':'담당 반 등록';$('#roster-owner').textContent=mode==='class'?`${currentTeacher()?.name||''} 선생님의 반으로 등록합니다.`:'레슨플랜을 작성할 선생님의 이름을 입력하세요.';$('#level-label').hidden=mode!=='class';rosterField('name').placeholder=mode==='teacher'?'선생님 이름':'예: 중등 정규 A반';rosterField('name').maxLength=mode==='teacher'?80:100;$('#roster-editor').showModal();}
+for(const id of ['add-teacher','mobile-add-teacher','setup-teacher'])$('#'+id).onclick=()=>openRoster('teacher');
+$('#add-class').onclick=()=>openRoster('class');
+let rosterSaving=false;document.querySelectorAll('.close-roster').forEach(button=>button.onclick=()=>{if(!rosterSaving)$('#roster-editor').close();});
+$('#roster-editor').addEventListener('cancel',e=>{if(rosterSaving)e.preventDefault();});
+rosterForm.onsubmit=async e=>{
+  e.preventDefault();if(rosterSaving)return;const button=rosterForm.querySelector('[type=submit]');button.disabled=true;rosterSaving=true;
+  try{const input={name:rosterField('name').value};if(rosterMode==='class'){input.level=rosterField('level').value;input.teacher_ids=[rosterTeacher];}const saved=await api(rosterMode==='teacher'?'/api/teachers':'/api/classes','POST',input);$('#roster-editor').close();await bootstrap(rosterMode==='teacher'?saved.id:rosterTeacher);notify(rosterMode==='teacher'?'선생님을 등록했습니다. 담당 반을 등록해주세요.':'반을 등록했습니다. 캘린더 날짜 칸에 바로 수업 내용을 입력하세요.');}catch(err){rosterForm.querySelector('.form-error').textContent=err.message;}finally{rosterSaving=false;button.disabled=false;}
+};
+render();
+
+$('#export-word').onclick=async()=>{
+  if(exporting)return;
+  const owner=currentTeacher(),selectedClass=classes.find(c=>c.id===classFilter),targetMonth=month;
+  if(!owner)return;exporting=true;$('#export-word').disabled=true;$('#export-word').textContent='문서 준비 중…';
+  try{
+    const url=`/api/teachers/${encodeURIComponent(owner.id)}/months/${targetMonth}/export.docx`+(selectedClass?'?class_id='+encodeURIComponent(selectedClass.id):'');
+    const response=await fetch(url);
+    if(!response.ok){const result=await response.json();throw Error(result.error||'문서를 만들지 못했습니다.');}
+    const objectUrl=URL.createObjectURL(await response.blob());
+    const a=document.createElement('a');a.href=objectUrl;a.download=`${targetMonth}_${owner.name}_${selectedClass?.name||'전체반'}_레슨플랜.docx`.replace(/[<>:"/\\|?*\u0000-\u001f]/g,'_');document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(objectUrl),10000);
+    notify('가로형 캘린더 Word 문서를 내려받았습니다.');
+  }catch(e){notify(e.message);}finally{exporting=false;$('#export-word').textContent='↓ 캘린더 Word';render();}
+};
+
+
+
+
+</script></body></html>
+
+
+
+

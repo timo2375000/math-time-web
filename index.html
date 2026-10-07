@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>수학 월별 레슨플랜</title>
+<style>body{margin:0;background:#f3f5fb;color:#202938;font-family:system-ui,sans-serif;min-height:100vh;display:grid;place-items:center}main{background:white;border-radius:20px;padding:40px;max-width:480px;margin:20px;box-shadow:0 10px 40px #20293812}h1{font-size:28px}p{line-height:1.7}a{display:inline-block;background:#5543ab;color:white;text-decoration:none;padding:14px 22px;border-radius:10px}#error{color:#a12e3b}</style></head>
+<body><main><h1>수학 월별 레슨플랜</h1><p>선생님별 수업 계획을 작성하고 월별 캘린더로 확인하세요.</p><a id="open-app" hidden>레슨플랜 작성하기</a><p id="error"></p><p>접속 비밀번호는 담당 관리자에게 받으세요.</p></main>
+<script src="config.js"></script><script>
+try{const url=new URL(window.MATH_TIME_APP_URL);if(url.protocol!=='https:'||url.hostname!=='script.google.com'||!url.pathname.endsWith('/exec'))throw Error();document.getElementById('open-app').href=url.href;document.getElementById('open-app').hidden=false;}catch(_){document.getElementById('error').textContent='관리자가 앱 접속 주소를 설정 중입니다.';}
+</script></body></html>
