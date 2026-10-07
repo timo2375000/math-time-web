@@ -14,11 +14,13 @@ class Sheet {
  setFrozenRows(){}setColumnWidths(){}setRowHeights(r,n,h){for(let i=0;i<n;i++)this.heights[r+i]=h;}autoResizeRows(){}getRowHeight(r){return this.heights[r]||21;}setRowHeight(r,h){this.heights[r]=h;}
 }
 const book={sheets:[],getSheets(){return this.sheets;},getSheetByName(n){return this.sheets.find(s=>s.name===n)||null;},insertSheet(n){if(this.getSheetByName(n))throw Error('duplicate');const s=new Sheet(n,this.sheets.length+1);this.sheets.push(s);return s;}};
-const props=new Map([['SPREADSHEET_ID','mock'],['APP_PASSWORD','test-password-123456789']]),cache=new Map();
+const props=new Map([['SPREADSHEET_ID','mock'],['APP_PASSWORD','Test1234']]),cache=new Map();
 const lock={held:false,waitLock(){this.held=true;},hasLock(){return this.held;},releaseLock(){this.held=false;}};
 const context={console:{error(){}},PropertiesService:{getScriptProperties:()=>({getProperty:k=>props.get(k)||null,setProperty:(k,v)=>props.set(k,v)})},CacheService:{getScriptCache:()=>({get:k=>cache.get(k)||null,put:(k,v)=>cache.set(k,v)})},LockService:{getScriptLock:()=>lock},SpreadsheetApp:{openById:id=>{assert.equal(id,'mock');return book;}},Utilities:{getUuid:()=>crypto.randomUUID(),DigestAlgorithm:{SHA_256:'sha256'},computeDigest:(algo,value)=>Array.from(crypto.createHash(algo).update(value).digest()),newBlob:s=>({getBytes:()=>Array.from(Buffer.from(s))}),base64Encode:bytes=>Buffer.from(bytes.map(x=>x<0?x+256:x)).toString('base64')}};
 vm.createContext(context);for(const name of ['Code.gs'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../apps-script',name),'utf8'),context,{filename:name});
-assert.throws(()=>context.authLogin('wrong'));const session=context.authLogin('test-password-123456789');
+for(const invalid of ['Abc1234','abcdefgh','12345678','Abcd12!@']){props.set('APP_PASSWORD',invalid);assert.throws(()=>context.authLogin(invalid));}
+props.set('APP_PASSWORD','Test1234');
+assert.throws(()=>context.authLogin('wrong'));const session=context.authLogin('Test1234');
 const api=(p,m='GET',b={})=>context.apiRequest(session,p,m,b);
 assert.equal(context.apiRequest('bad','/api/bootstrap','GET',{}).status,401);
 // Import legacy connected sheet without changing IDs.
@@ -37,7 +39,7 @@ assert.equal(api(url+'/'+lesson.id,'PUT',{...input,revision:1}).status,409);
 assert.equal(api(url,'POST',{...input,date:'2026-10-32'}).status,400);
 assert.equal(api(url,'POST',{...input,status:'completed'}).status,400);
 assert.equal(api('/api/lesson-plan-archive').data[0].teachers.length,2);
-const doc=api(`/api/teachers/${teacher.id}/months/2026-10/export.docx`);assert.equal(doc.status,200);const bytes=Buffer.from(doc.data.base64,'base64');assert.equal(bytes.readUInt32LE(0),0x04034b50);assert(bytes.includes(Buffer.from('뺄셈')));fs.writeFileSync('/tmp/math-time-free-test.docx',bytes);
+const doc=api(`/api/teachers/${teacher.id}/months/2026-10/export.docx`);assert.equal(doc.status,200);const bytes=Buffer.from(doc.data.base64,'base64');assert.equal(bytes.readUInt32LE(0),0x04034b50);assert(bytes.includes(Buffer.from('뺄셈')));assert(!bytes.includes(Buffer.from('w:type="paragraph_"')));assert(bytes.includes(Buffer.from('w:type="paragraph"')));fs.writeFileSync('/tmp/math-time-free-test.docx',bytes);
 assert.equal(api('/api/classes/'+cl.id,'DELETE').status,200);assert.equal(api(url).data.length,0);assert(!calendar.rows.flat().some(v=>String(v).includes('뺄셈')));assert.equal(source.getLastRow(),3);
 cache.delete('session:'+session);assert.equal(api('/api/bootstrap').status,401);
 console.log('PASS authentication, legacy import, registration, teacher separation, save/edit/revision, validation, archive, calendar refresh/deletion, DOCX, expired session');
